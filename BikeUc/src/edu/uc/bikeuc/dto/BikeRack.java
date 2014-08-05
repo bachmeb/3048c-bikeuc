@@ -6,7 +6,7 @@ public class BikeRack {
     private double latitude;
     private double longitude;
     
-    BikeRack(){
+    public BikeRack(){
     	//empty constructor
     }
 
