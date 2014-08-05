@@ -17,14 +17,14 @@ public interface IBikeRouteDAO {
 	
 	public abstract void onUpdate(SQLiteDatabase db);
 
-	BikeRack populateRackFromCursor(Cursor c);
+	public abstract BikeRack populateRackFromCursor(Cursor c);
 
-	ArrayList<BikeRoute> fetchAllRoutes() throws Exception;
+	public abstract ArrayList<BikeRoute> fetchAllRoutes() throws Exception;
 
-	BikeRoute fetchRouteById(Integer id) throws Exception;
+	public abstract BikeRoute fetchRouteById(Integer id) throws Exception;
 
-	BikeRoute fetchNearestRoute(double lat, double lon) throws Exception;
+	public abstract BikeRoute fetchNearestRoute(double lat, double lon) throws Exception;
 
-	void save(BikeRoute route) throws Exception;
+	public abstract void save(BikeRoute route) throws Exception;
 
 }

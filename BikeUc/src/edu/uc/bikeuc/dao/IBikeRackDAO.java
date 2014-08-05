@@ -16,14 +16,16 @@ public interface IBikeRackDAO {
 	
 	public abstract void onUpdate(SQLiteDatabase db);
 
-	BikeRack populateRackFromCursor(Cursor c);
+	public abstract void save(BikeRack rack) throws Exception;
 	
-	ArrayList<BikeRack> fetchAllRacks() throws Exception;
+	public abstract ArrayList<BikeRack> fetchAllRacks() throws Exception;
+	
+	public abstract BikeRack populateRackFromCursor(Cursor c);
+	
+	public abstract BikeRack fetchRackById(Integer id) throws Exception;
 
-	BikeRack fetchRackById(Integer id) throws Exception;
+	public abstract BikeRack fetchNearestRack(double lat, double lon)throws Exception;
 
-	BikeRack fetchNearestRack(double lat, double lon)throws Exception;
-
-	void save(BikeRack rack) throws Exception;
+	
 	
 }
