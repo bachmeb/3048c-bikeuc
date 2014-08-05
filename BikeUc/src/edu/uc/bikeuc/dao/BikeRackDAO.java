@@ -28,10 +28,9 @@ public class BikeRackDAO extends SQLiteOpenHelper implements IBikeRackDAO {
 //	}
 
 	public BikeRackDAO(Context context) {		
-		super(context, "bikeuc.db", null, 1);
+		super(context, "bikeuc", null, 1);
 	}
 
-	@Override
 	public void onUpdate(SQLiteDatabase db) {
 		//Run a DROP IF EXISTS statement to drop the USERS table.
 		//Invoke onCreate.
@@ -137,7 +136,6 @@ public class BikeRackDAO extends SQLiteOpenHelper implements IBikeRackDAO {
 		return null;
 	}
 
-	@Override
 	public void onCreate(SQLiteDatabase db) {
 
 		//drop the USERS table if it exists
@@ -161,10 +159,64 @@ public class BikeRackDAO extends SQLiteOpenHelper implements IBikeRackDAO {
 
 	}
 
-	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// nothing to do here
 
+	}
+
+	@Override
+	public String fetchPrime() throws Exception {
+
+ 		// our flexible query.
+		String fetchQuery  = "select * from " + RACK_TABLE;
+
+		// run the query.
+		Cursor cursor = getReadableDatabase().rawQuery(fetchQuery, null);
+
+		//check the cursor count
+		if (cursor.getCount() == 1) {
+			// find out who our user is.
+
+			// move our cursor to the first position.
+			cursor.moveToFirst();
+
+			BikeRack rack = populateRackFromCursor(cursor);
+			
+			String status = rack.getRackName();
+
+			// return the populated user.
+			return status;
+		} else if (cursor.getCount() > 1){
+			throw new Exception("Too many results returned.  Expected 1, got " + cursor.getCount());
+		} else {
+			// if we got here, we have 0 results.  Return null.
+			return null;
+		}
+	}
+
+	@Override
+	public BikeRack fetchFirstRack() throws Exception {
+
+		// Declare the variable that will hold our results.
+		BikeRack firstRack = new BikeRack();
+		
+ 		// our flexible query.
+		String fetchQuery  = "select * from " + RACK_TABLE ;
+
+		// run the query.
+		Cursor cursor = getReadableDatabase().rawQuery(fetchQuery, null);
+		
+		// move the cursor to the first result.
+		//cursor.moveToFirst();
+		
+		if (!(cursor.moveToFirst()) || cursor.getCount() ==0){
+		     //cursor is empty
+		}
+		else{
+			firstRack = populateRackFromCursor(cursor);
+		}
+		
+		return firstRack;
 	}
 
 }

@@ -9,23 +9,20 @@ import android.database.sqlite.SQLiteDatabase;
 import edu.uc.bikeuc.dto.BikeRack;
 
 public interface IBikeRackDAO {
-	
-	public abstract void onCreate(SQLiteDatabase db);
 
-	public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
+	public void save(BikeRack rack) throws Exception;
 	
-	public abstract void onUpdate(SQLiteDatabase db);
+	public ArrayList<BikeRack> fetchAllRacks() throws Exception;
+	
+	public BikeRack populateRackFromCursor(Cursor c);
+	
+	public BikeRack fetchRackById(Integer id) throws Exception;
 
-	public abstract void save(BikeRack rack) throws Exception;
+	public BikeRack fetchNearestRack(double lat, double lon)throws Exception;
 	
-	public abstract ArrayList<BikeRack> fetchAllRacks() throws Exception;
-	
-	public abstract BikeRack populateRackFromCursor(Cursor c);
-	
-	public abstract BikeRack fetchRackById(Integer id) throws Exception;
+	public String fetchPrime() throws Exception;
 
-	public abstract BikeRack fetchNearestRack(double lat, double lon)throws Exception;
-
+	public BikeRack fetchFirstRack() throws Exception;
 	
 	
 }

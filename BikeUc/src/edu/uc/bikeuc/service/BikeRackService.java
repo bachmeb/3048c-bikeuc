@@ -49,4 +49,20 @@ public class BikeRackService implements IBikeRackService {
 		//no return
 	}
 
+	@Override
+	public String fetchPrime() throws Exception {
+		//call the method on the data access object
+		String status = rackDAO.fetchPrime();
+		//no return
+		return status;
+	}
+	
+	@Override
+	public BikeRack fetchFirstRack() throws Exception {
+		//call the method on the data access object
+		BikeRack rack = rackDAO.fetchFirstRack();
+		//return the value
+		return rack;
+	}
+
 }

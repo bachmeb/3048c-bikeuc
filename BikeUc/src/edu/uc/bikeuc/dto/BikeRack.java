@@ -17,7 +17,9 @@ public class BikeRack {
     }
     
     public BikeRack(double lat, double lon, String name){
-    	
+    	this.latitude = lat;
+    	this.longitude = lon;
+    	this.rackName = name;
     }
         
     //getters and setters

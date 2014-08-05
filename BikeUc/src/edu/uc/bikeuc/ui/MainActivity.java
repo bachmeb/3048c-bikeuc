@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		//grab the resource xml
 		setContentView(R.layout.activity_main);
 		
-		//instantiate the buttons
+		//instantiate the buttons in the onCreate method
 		buttonObjAbout = (Button) findViewById(R.id.btnAbout);
 		buttonObjBikeRacks = (Button) findViewById(R.id.btnBikeRacks);
 		buttonObjBikeRoutes = (Button) findViewById(R.id.btnBikeRoutes);
