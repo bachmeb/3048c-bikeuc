@@ -20,4 +20,38 @@
         android:layout_marginTop="38dp"
         android:text="Stub" />
 
+    <Button
+        android:id="@+id/btnBikeRoutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnStub"
+        android:layout_below="@+id/btnStub"
+        android:layout_marginTop="26dp"
+        android:text="Bike Routes" />
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnBikeRoutes"
+        android:layout_centerVertical="true"
+        android:text="Camera" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBikeRoutes"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:text="About" />
+
+    <Button
+        android:id="@+id/btnBikeRacks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnBikeRoutes"
+        android:layout_alignLeft="@+id/btnAbout"
+        android:text="Bike Racks" />
+
 </RelativeLayout>
