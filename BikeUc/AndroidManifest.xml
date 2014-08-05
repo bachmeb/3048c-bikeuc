@@ -23,8 +23,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.uc.bikeuc.ui.StubActivity"
-            android:label="@string/title_activity_stub" >
+            android:name="edu.uc.bikeuc.ui.StubRackActivity"
+            android:label="@string/title_activity_stub_rack" >
+        </activity>
+        <activity
+            android:name="edu.uc.bikeuc.ui.StubRouteActivity"
+            android:label="@string/title_activity_stub_route" >
         </activity>
     </application>
 

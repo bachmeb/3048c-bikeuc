@@ -17,7 +17,8 @@ public class MainActivity extends Activity {
 	private Button buttonObjBikeRacks;
 	private Button buttonObjBikeRoutes;
 	private Button buttonObjCamera;
-	private Button buttonObjStub;
+	private Button buttonObjStubRacks;
+	private Button buttonObjStubRoutes;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +32,27 @@ public class MainActivity extends Activity {
 		buttonObjBikeRacks = (Button) findViewById(R.id.btnBikeRacks);
 		buttonObjBikeRoutes = (Button) findViewById(R.id.btnBikeRoutes);
 		buttonObjCamera = (Button) findViewById(R.id.btnCamera);
-		buttonObjStub = (Button) findViewById(R.id.btnStub);
+		buttonObjStubRacks = (Button) findViewById(R.id.btnStubRacks);
+		buttonObjStubRoutes = (Button) findViewById(R.id.btnStubRoutes);
 		
 		//attach onClick listeners to the button objects
-		buttonObjStub.setOnClickListener(new View.OnClickListener(){
+		buttonObjStubRacks.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View currentView) {
 				//declare the intent
-				Intent myIntent = new Intent(currentView.getContext(), StubActivity.class);
+				Intent myIntent = new Intent(currentView.getContext(), StubRackActivity.class);
+				//act on the intent
+				startActivityForResult(myIntent,0);
+				} //end onClick
+			} // end setOnClickListener 
+		); //end new View.OnClickListener()
+		
+		//attach onClick listeners to the button objects
+		buttonObjStubRoutes.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View currentView) {
+				//declare the intent
+				Intent myIntent = new Intent(currentView.getContext(), StubRouteActivity.class);
 				//act on the intent
 				startActivityForResult(myIntent,0);
 				} //end onClick

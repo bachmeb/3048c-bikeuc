@@ -2,29 +2,24 @@ package edu.uc.bikeuc.dao;
 
 import java.util.ArrayList;
 
-import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
-import edu.uc.bikeuc.dto.BikeRack;
 import edu.uc.bikeuc.dto.BikeRoute;
 
 public interface IBikeRouteDAO {
+
+	public void save(BikeRoute rack) throws Exception;
 	
-	public abstract void onCreate(SQLiteDatabase db);
-
-	public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
+	public ArrayList<BikeRoute> fetchAllRoutes() throws Exception;
 	
-	public abstract void onUpdate(SQLiteDatabase db);
+	public BikeRoute populateRouteFromCursor(Cursor c);
+	
+	public BikeRoute fetchRouteById(Integer id) throws Exception;
 
-	public abstract BikeRack populateRackFromCursor(Cursor c);
+	public BikeRoute fetchNearestRoute(double lat, double lon)throws Exception;
+	
+	public String fetchPrime() throws Exception;
 
-	public abstract ArrayList<BikeRoute> fetchAllRoutes() throws Exception;
-
-	public abstract BikeRoute fetchRouteById(Integer id) throws Exception;
-
-	public abstract BikeRoute fetchNearestRoute(double lat, double lon) throws Exception;
-
-	public abstract void save(BikeRoute route) throws Exception;
-
+	public BikeRoute fetchFirstRoute() throws Exception;
+	
+	
 }

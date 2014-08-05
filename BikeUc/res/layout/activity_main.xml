@@ -5,27 +5,27 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
     <Button
-        android:id="@+id/btnStub"
+        android:id="@+id/btnStubRacks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="38dp"
-        android:text="Stub" />
+        android:text="Stub Racks" />
 
     <Button
         android:id="@+id/btnBikeRoutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnStub"
-        android:layout_below="@+id/btnStub"
+        android:layout_alignLeft="@+id/btnStubRacks"
+        android:layout_below="@+id/btnStubRacks"
         android:layout_marginTop="26dp"
         android:text="Bike Routes" />
 
@@ -53,5 +53,14 @@
         android:layout_alignBottom="@+id/btnBikeRoutes"
         android:layout_alignLeft="@+id/btnAbout"
         android:text="Bike Racks" />
+
+    <Button
+        android:id="@+id/btnStubRoutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCamera"
+        android:layout_alignBottom="@+id/btnCamera"
+        android:layout_alignRight="@+id/btnAbout"
+        android:text="Stub Routes" />
 
 </RelativeLayout>

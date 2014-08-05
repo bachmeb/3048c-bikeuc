@@ -5,60 +5,59 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewStubRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+         />
 
     <Button
-        android:id="@+id/btnSaveRack"
+        android:id="@+id/btnSaveRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="10dp"
-        android:text="save(rack)" />
+        android:layout_below="@+id/textViewStubRoute"
+        android:layout_marginTop="1dp"
+        android:text="save(route)" />
 
     <Button
-        android:id="@+id/btnFetchRackById"
+        android:id="@+id/btnFetchRouteById"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnSaveRack"
-        android:layout_marginTop="10dp"
-        android:text="fetchRackById(1)" />
+        android:layout_below="@+id/btnSaveRoute"
+        android:layout_marginTop="1dp"
+        android:text="fetchRouteById(1)" />
     
     <Button
-        android:id="@+id/btnFetchAllRacks"
+        android:id="@+id/btnFetchAllRoutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnFetchRackById"
-        android:layout_marginTop="10dp"
-        android:text="fetchAllRacks()" />
+        android:layout_below="@+id/btnFetchRouteById"
+        android:layout_marginTop="1dp"
+        android:text="fetchAllRoutes()" />
 
     <Button
-        android:id="@+id/btnFetchFirstRack"
+        android:id="@+id/btnFetchFirstRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnFetchAllRacks"
-        android:layout_marginTop="10dp"
-        android:text="fetchFirstRack()" />
+        android:layout_below="@+id/btnFetchAllRoutes"
+        android:layout_marginTop="1dp"
+        android:text="fetchFirstRoute()" />
 
     <Button
-        android:id="@+id/btnFetchNearestRack"
+        android:id="@+id/btnFetchNearestRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnFetchFirstRack"
-        android:layout_marginTop="10dp"
-        android:text="fetchNearestRack()" />
-
+        android:layout_below="@+id/btnFetchFirstRoute"
+        android:layout_marginTop="1dp"
+        android:text="fetchNearestRoute()" />
 
 </RelativeLayout>

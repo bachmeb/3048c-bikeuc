@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textViewRack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+
+    <Button
+        android:id="@+id/btnSaveRack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewRack"
+        android:layout_marginTop="1dp"
+        android:text="save(rack)" />
+
+    <Button
+        android:id="@+id/btnFetchRackById"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnSaveRack"
+        android:layout_marginTop="1dp"
+        android:text="fetchRackById(1)" />
+    
+    <Button
+        android:id="@+id/btnFetchAllRacks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnFetchRackById"
+        android:layout_marginTop="1dp"
+        android:text="fetchAllRacks()" />
+
+    <Button
+        android:id="@+id/btnFetchFirstRack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnFetchAllRacks"
+        android:layout_marginTop="1dp"
+        android:text="fetchFirstRack()" />
+
+    <Button
+        android:id="@+id/btnFetchNearestRack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnFetchFirstRack"
+        android:layout_marginTop="1dp"
+        android:text="fetchNearestRack()" />
+
+</RelativeLayout>

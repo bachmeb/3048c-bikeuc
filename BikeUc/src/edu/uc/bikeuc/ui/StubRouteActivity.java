@@ -1,53 +1,56 @@
 package edu.uc.bikeuc.ui;
 
-import edu.uc.bikeuc.R;
-import edu.uc.bikeuc.R.layout;
-import edu.uc.bikeuc.dto.BikeRack;
-import edu.uc.bikeuc.service.BikeRackService;
-import edu.uc.bikeuc.service.IBikeRackService;
+import java.util.ArrayList;
+
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+import edu.uc.bikeuc.R;
+import edu.uc.bikeuc.dto.BikeRoute;
+import edu.uc.bikeuc.service.BikeRouteService;
+import edu.uc.bikeuc.service.IBikeRouteService;
 
-public class StubActivity extends Activity {
+public class StubRouteActivity extends Activity {
 	
 	//declare a service object
-	private IBikeRackService rackService;
+	private IBikeRouteService routeService;
 	
 	//declare stub values
-	private BikeRack stubRack;
-	private String stubRackName;
-	private double stubRackLat;
-	private double stubRackLng;
+	private BikeRoute stubRoute;
+	private String stubRouteName;
+	private double stubRouteLat;
+	private double stubRouteLng;
+	private ArrayList<LatLng> stubLatLngs;
 	
 	//declare the buttons as class variables
-	private Button buttonObjFetchAllRacks;
-	private Button buttonObjFetchFirstRack;
-	private Button buttonObjFetchNearestRack;
-	private Button buttonObjFetchRacksById;
-	private Button buttonObjSaveRack;
-	
+	private Button buttonObjFetchAllRoutes;
+	private Button buttonObjFetchFirstRoute;
+	private Button buttonObjFetchNearestRoute;
+	private Button buttonObjFetchRoutesById;
+	private Button buttonObjSaveRoute;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		//call the super class
 		super.onCreate(savedInstanceState);
 		//set the view to resource xml
-		setContentView(R.layout.activity_stub);
+		setContentView(R.layout.activity_stub_route);
 
 		//instantiate stub values
-		stubRackName = "the stub rack";
-		stubRackLat = 99.44;
-		stubRackLng = 85.55;
-		stubRack = new BikeRack(stubRackLat,stubRackLng,stubRackName);
-		
-        // instantiate and initialize the service object
-        rackService = new BikeRackService(this);
+
+		stubRouteName = "the stub route";
+		stubRouteLat = 67.54;
+		stubRouteLng = 45.65;
+		stubLatLngs = new ArrayList<LatLng>();
+		stubLatLngs.add(new LatLng(stubRouteLat, stubRouteLng));
+		stubRoute = new BikeRoute(stubRouteName, stubLatLngs);
+
+        // instantiate and initialize the service objects
+        routeService = new BikeRouteService(this);
 
         // call a service method, 
         // which will call a data access object method
@@ -55,7 +58,7 @@ public class StubActivity extends Activity {
         // which will cause the db to be created, 
         // if it hasn't already been created
         try {
-			String test = rackService.fetchPrime();
+			String test = routeService.fetchPrime();
 		} catch (Exception e) {
 			// exception
 			e.printStackTrace();
@@ -68,31 +71,31 @@ public class StubActivity extends Activity {
 		}
 		
 		//instantiate the buttons in the onCreate method
-        buttonObjFetchAllRacks = (Button) findViewById(R.id.btnFetchAllRacks);
-        buttonObjFetchFirstRack = (Button) findViewById(R.id.btnFetchFirstRack);
-        buttonObjFetchNearestRack = (Button) findViewById(R.id.btnFetchNearestRack);
-		buttonObjFetchRacksById = (Button) findViewById(R.id.btnFetchRackById);
-		buttonObjSaveRack = (Button) findViewById(R.id.btnSaveRack);
+        buttonObjFetchAllRoutes = (Button) findViewById(R.id.btnFetchAllRoutes);
+        buttonObjFetchFirstRoute = (Button) findViewById(R.id.btnFetchFirstRoute);
+        buttonObjFetchNearestRoute = (Button) findViewById(R.id.btnFetchNearestRoute);
+		buttonObjFetchRoutesById = (Button) findViewById(R.id.btnFetchRouteById);
+		buttonObjSaveRoute = (Button) findViewById(R.id.btnSaveRoute);
 
 		//attach onClick listeners to the button objects
-		buttonObjFetchRacksById.setOnClickListener(new View.OnClickListener(){
+		buttonObjFetchRoutesById.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View currentView) {
 
 				//make some toast
 				Toast.makeText(
 						getApplicationContext(), 
-						"trying to fetch rack by id",
+						"trying to fetch route by id",
 						Toast.LENGTH_LONG)
 					.show();
 
 				// call a method on the service object
 				try {
-					stubRack = rackService.fetchRackById(1);
+					stubRoute = routeService.fetchRouteById(1);
 					//make some toast
 					Toast.makeText(
 							getApplicationContext(), 
-							"got " + stubRack.getRackName(),
+							"got " + stubRoute.getRouteName(),
 							Toast.LENGTH_LONG)
 						.show();
 				} catch (Exception e) {
@@ -111,13 +114,13 @@ public class StubActivity extends Activity {
 		); //end new View.OnClickListener()
 
 		//attach onClick listeners to the button objects
-		buttonObjFetchAllRacks.setOnClickListener(new View.OnClickListener(){
+		buttonObjFetchAllRoutes.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View currentView) {
 				//make some toast
 				Toast.makeText(
 						getApplicationContext(), 
-						"trying to fetch all racks",
+						"trying to fetch all routes",
 						Toast.LENGTH_LONG)
 					.show();
 
@@ -127,20 +130,20 @@ public class StubActivity extends Activity {
 		); //end new View.OnClickListener()
 
 		//attach onClick listeners to the button objects
-		buttonObjFetchFirstRack.setOnClickListener(new View.OnClickListener(){
+		buttonObjFetchFirstRoute.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View currentView) {
 				//make some toast
 				Toast.makeText(
 						getApplicationContext(), 
-						"trying to fetch first rack",
+						"trying to fetch first route",
 						Toast.LENGTH_LONG)
 					.show();
 
 				// call a method on the service object
 				try {
-					BikeRack rack = rackService.fetchFirstRack();
-					String result = rack.getRackName();
+					BikeRoute route = routeService.fetchFirstRoute();
+					String result = route.getRouteName();
 					//make some toast
 					Toast.makeText(
 							getApplicationContext(), 
@@ -164,13 +167,13 @@ public class StubActivity extends Activity {
 		); //end new View.OnClickListener()
 
 		//attach onClick listeners to the button objects
-		buttonObjFetchNearestRack.setOnClickListener(new View.OnClickListener(){
+		buttonObjFetchNearestRoute.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View currentView) {
 				//make some toast
 				Toast.makeText(
 						getApplicationContext(), 
-						"trying to fetch nearest rack",
+						"trying to fetch nearest route",
 						Toast.LENGTH_LONG)
 					.show();
 
@@ -180,7 +183,7 @@ public class StubActivity extends Activity {
 		); //end new View.OnClickListener()
 
 		//attach onClick listeners to the button objects
-		buttonObjSaveRack.setOnClickListener(new View.OnClickListener(){
+		buttonObjSaveRoute.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View currentView) {
 				//make some toast
@@ -191,7 +194,7 @@ public class StubActivity extends Activity {
 					.show();
 				// call a method on the service object
 				try {
-					rackService.save(stubRack);
+					routeService.save(stubRoute);
 					//make some toast
 					Toast.makeText(
 							getApplicationContext(), 

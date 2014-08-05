@@ -9,11 +9,12 @@ import com.google.android.gms.maps.model.LatLng;
  * BikeRoute data transfer object
  */
 public class BikeRoute {
-	
+
+
 	private int routeId;
+	private String routeName;
 	private ArrayList<LatLng> latlngs;
-	
-    
+	  
     /**
      * 
      */
@@ -22,7 +23,8 @@ public class BikeRoute {
     }
 	/**
      */
-    public BikeRoute(ArrayList<LatLng> latlngs){
+    public BikeRoute(String name, ArrayList<LatLng> latlngs){
+    	this.routeName = name;
     	this.latlngs = latlngs;
    
     }
@@ -35,6 +37,13 @@ public class BikeRoute {
 		this.routeId = routeId;
 	}
 
+	public String getRouteName() {
+		return routeName;
+	}
+	public void setRouteName(String rname) {
+		this.routeName = rname;
+	}
+	
 	public ArrayList<LatLng> getLatlngs() {
 		return latlngs;
 	}
