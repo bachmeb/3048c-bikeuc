@@ -3,7 +3,12 @@
 
     <string name="app_name">BikeUc</string>
     <string name="hello_world">Hello world!</string>
+    <string name="main_page">Main</string>
     <string name="title_activity_stub_rack">StubRackActivity</string>
     <string name="title_activity_stub_route">StubRouteActivity</string>
+    <string name="title_activity_bike_routes_map">BikeRoutesMapActivity</string>
+    <string name="title_activity_bike_racks_map">BikeRacksMapActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_take_picture">TakePictureActivity</string>
 
 </resources>

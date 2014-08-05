@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="44dp"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnMainPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayoutAbout"
+        android:layout_alignParentBottom="true"
+        android:text="Main Page" />
+
+    <TextView
+        android:id="@+id/textViewAbout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/linearLayoutAbout"
+        android:text="Bike UC will be an application that assists UC students/faculty in planning bike routes around campus and the Clifton area.  It will keep track of workouts and locate points of interests (such as bike racks found around campus). This service will be accessible through a mobile application. There will be a list of routes with varying difficulties that show where the user can ride safely through and around UC’s campus. This application is helpful for those who are new to UC’s campus or new to cycling. We want to create a positive and motivating experience for the user and allow them to set goals for themselves. Users will be able to examine their progress from when they started cycling to where they are now." />
+
+</RelativeLayout>

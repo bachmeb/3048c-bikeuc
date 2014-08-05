@@ -58,6 +58,58 @@ public class MainActivity extends Activity {
 				} //end onClick
 			} // end setOnClickListener 
 		); //end new View.OnClickListener()
+
+		
+		//attach onClick listeners to the button objects
+		buttonObjAbout.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View currentView) {
+				//declare the intent
+				Intent myIntent = new Intent(currentView.getContext(), AboutActivity.class);
+				//act on the intent
+				startActivityForResult(myIntent,0);
+				} //end onClick
+			} // end setOnClickListener 
+		); //end new View.OnClickListener()
+
+		
+		//attach onClick listeners to the button objects
+		buttonObjBikeRoutes.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View currentView) {
+				//declare the intent
+				Intent myIntent = new Intent(currentView.getContext(), BikeRoutesMapActivity.class);
+				//act on the intent
+				startActivityForResult(myIntent,0);
+				} //end onClick
+			} // end setOnClickListener 
+		); //end new View.OnClickListener()
+
+		
+		//attach onClick listeners to the button objects
+		buttonObjBikeRacks.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View currentView) {
+				//declare the intent
+				Intent myIntent = new Intent(currentView.getContext(), BikeRacksMapActivity.class);
+				//act on the intent
+				startActivityForResult(myIntent,0);
+				} //end onClick
+			} // end setOnClickListener 
+		); //end new View.OnClickListener()
+
+		
+		//attach onClick listeners to the button objects
+		buttonObjCamera.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View currentView) {
+				//declare the intent
+				Intent myIntent = new Intent(currentView.getContext(), TakePictureActivity.class);
+				//act on the intent
+				startActivityForResult(myIntent,0);
+				} //end onClick
+			} // end setOnClickListener 
+		); //end new View.OnClickListener()
 		
 	} // end onCreate
 }

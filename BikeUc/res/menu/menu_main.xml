@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- Set the type of map to be displayed -->>
+    <item
+        android:id="@+id/mapTypeNormal"
+        android:title="Normal" />
+    <item
+        android:id="@+id/mapTypeSatellite"
+        android:title="Satellite" />
+    <item
+        android:id="@+id/mapTypeHybrid"
+        android:title="Hybrid" />
+    <item
+        android:id="@+id/mapTypeTerrain"
+        android:title="Terrain" />
+    
+</menu>
